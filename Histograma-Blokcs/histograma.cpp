@@ -73,7 +73,7 @@ void Histograma::get_histogramas() {
 
 	cout << "\n- Histograma Com Normalizacao: ";
 	for (int i = 0; i < numero_bins; i++) {
-			cout << histograma_normalizado[i] << " ";
-    }
+        cout << histograma_normalizado[i] << " ";
+	}
 	cout << endl;
 }
