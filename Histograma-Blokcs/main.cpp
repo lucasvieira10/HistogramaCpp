@@ -4,6 +4,8 @@
 
 using namespace std;
 
+/*autor: Lucas Lima Vieira*/
+
 void mostra_histograma(Histograma histograma, int total_valores);
 
 int main() {

@@ -2,6 +2,8 @@
 #define HISTOGRAMA_H
 #define TAM_MAX 100
 
+/*autor: Lucas Lima Vieira*/
+
 class Histograma {
 	private:
 		int numero_bins;

@@ -6,6 +6,8 @@
 
 using namespace std;
 
+/*autor: Lucas Lima Vieira*/
+
 Histograma::Histograma(int bins, int maximo, int minimo, double* array_valores) {
 
 	this->numero_bins = bins;
