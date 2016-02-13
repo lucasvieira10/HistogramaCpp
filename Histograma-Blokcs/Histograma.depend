@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1455392816 source:/home/lucas/Área de Trabalho/arquivos C++/Histograma-Blokcs/histograma.cpp
+	<iostream>
+	<iomanip>
+	<string.h>
+	"histograma.h"
+
+1455392836 /home/lucas/Área de Trabalho/arquivos C++/Histograma-Blokcs/histograma.h
+
+1455392823 source:/home/lucas/Área de Trabalho/arquivos C++/Histograma-Blokcs/main.cpp
+	<iostream>
+	"histograma.h"
+

@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void mostra_histograma(Histograma histograma, int total_valores, int soma_valores);
+void mostra_histograma(Histograma histograma, int total_valores);
 
 int main() {
 
@@ -24,24 +24,22 @@ int main() {
 	}
 
 	cout << "\n# Valores: ";
-	double array_valores[TAM_MAX];
-	double valores, soma_valores = 0;
+	double array_valores[TAM_MAX], valores;
 
 	for (int i = 0; i < total_valores; i++) {
 		cin >> valores;
-		soma_valores += valores;
 		array_valores[i] = valores;
 	}
 
 	Histograma histograma(numero_bins, numero_maximo, numero_minimo, array_valores);
-	mostra_histograma(histograma, total_valores, soma_valores);
+	mostra_histograma(histograma, total_valores);
 
 	return 0;
 }
 
-void mostra_histograma(Histograma histograma, int total_valores, int soma_valores) {
+void mostra_histograma(Histograma histograma, int total_valores) {
 
 	histograma.histograma_sem_norma(total_valores);
-	histograma.histograma_com_norma(soma_valores);
-	histograma.get_histograma();
+	histograma.histograma_com_norma();
+	histograma.get_histogramas();
 }

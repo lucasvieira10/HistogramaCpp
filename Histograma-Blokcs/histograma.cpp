@@ -47,14 +47,23 @@ void Histograma::histograma_sem_norma(int total_valores) {
 	}
 }
 
-void Histograma::histograma_com_norma(int soma_valores) {
+double Histograma::soma_valores_histograma() {
+
+    double soma_valores = 0;
+    for (int i = 0; i < numero_bins; i++) {
+        soma_valores += histograma_nao_normalizado[i];
+    }
+    return soma_valores;
+}
+
+void Histograma::histograma_com_norma() {
 
 	for (int i = 0; i < numero_bins; i++) {
-		histograma_normalizado[i] = histograma_nao_normalizado[i] / soma_valores;
+		histograma_normalizado[i] = histograma_nao_normalizado[i] / soma_valores_histograma();
 	}
 }
 
-void Histograma::get_histograma() {
+void Histograma::get_histogramas() {
 
 	cout.precision(3);
 	cout << "\n- Histograma Sem Normalizacao: ";
@@ -65,6 +74,6 @@ void Histograma::get_histograma() {
 	cout << "\n- Histograma Com Normalizacao: ";
 	for (int i = 0; i < numero_bins; i++) {
 			cout << histograma_normalizado[i] << " ";
-		}
+    }
 	cout << endl;
 }

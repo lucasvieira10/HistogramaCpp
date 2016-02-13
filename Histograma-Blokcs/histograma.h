@@ -12,12 +12,13 @@ class Histograma {
 		double histograma_normalizado[TAM_MAX];
 		void inicializa_array_histograma();
 		double* calcula_frequencia();
+		double soma_valores_histograma();
 
 	public:
 		Histograma(int, int, int, double*);
 		void histograma_sem_norma(int);
-		void histograma_com_norma(int);
-		void get_histograma();
+		void histograma_com_norma();
+		void get_histogramas();
 };
 
 #endif
