@@ -13,7 +13,7 @@ class Histograma {
 		double histograma_nao_normalizado[TAM_MAX];
 		double histograma_normalizado[TAM_MAX];
 		void inicializa_array_histograma();
-		double* calcula_frequencia();
+		double* calcula_intervalo_classe();
 		double soma_valores_histograma();
 
 	public:

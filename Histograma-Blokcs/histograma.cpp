@@ -25,23 +25,23 @@ void Histograma::inicializa_array_histograma() {
 	memset(histograma_normalizado, 0, sizeof(histograma_normalizado));
 }
 
-double* Histograma::calcula_frequencia() {
+double* Histograma::calcula_intervalo_classe() {
 
 	int amplitude = maximo_permitido - minimo_permitido;
 	double intervalo = amplitude / numero_bins;
-	static double frequencia[TAM_MAX];
+	static double intervalo_classe[TAM_MAX];
 
 	for (int i = 0; i < numero_bins; i++) {
-		frequencia[i] = (i+1) * intervalo;
+		intervalo_classe[i] = (i+1) * intervalo;
 	}
-	return frequencia;
+	return intervalo_classe;
 }
 
 void Histograma::histograma_sem_norma(int total_valores) {
 
 	for (int i = 0; i < total_valores; i++) {
-		for (int j = 0; j < total_valores; j++) {
-			if (*(valores + i) <= *(calcula_frequencia() + j)) {
+		for (int j = 0; j < numero_bins; j++) {
+			if (*(valores + i) <= *(calcula_intervalo_classe() + j)) {
 					histograma_nao_normalizado[j]++;
 					break;
 			}
@@ -75,7 +75,7 @@ void Histograma::get_histogramas() {
 
 	cout << "\n- Histograma Com Normalizacao: ";
 	for (int i = 0; i < numero_bins; i++) {
-            cout << histograma_normalizado[i] << " ";
+        cout << histograma_normalizado[i] << " ";
 	}
 	cout << endl;
 }
